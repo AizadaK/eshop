@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Good(models.Model):
     name = models.CharField(max_length=255)
@@ -6,6 +7,19 @@ class Good(models.Model):
     qty = models.IntegerField(default=0)
 
 class Order(models.Model):
+    goods = models.ForeignKey(
+        to=User,
+        related_name="order",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+    )
+
+    goods = models.ManyToManyField(
+        to=Good,
+        related_name="order",
+        blank=True
+    )
     description = models.TextField()
     phone_number = models.CharField(max_length=50) 
         
