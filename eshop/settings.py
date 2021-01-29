@@ -25,7 +25,7 @@ SECRET_KEY = 'el_x(&@t5ldueu6#29k5!ysydkvz(!(ckrv30p29obi5*$mzek'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'rest_framework',
-]
+  
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
