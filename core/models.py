@@ -7,7 +7,7 @@ class Good(models.Model):
     qty = models.IntegerField(default=0)
 
 class Order(models.Model):
-    goods = models.ForeignKey(
+    user = models.ForeignKey(
         to=User,
         related_name="order",
         on_delete=models.CASCADE,
